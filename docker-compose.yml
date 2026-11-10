@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  stable-diffusion:
+    image: ghcr.io/neggles/sd-webui-docker:latest
+    container_name: stable-diffusion-webui
+    ports:
+      - "7860:7860"
+    volumes:
+    # The :U mount flag has been removed here because file permissions are managed natively
+    # via the host's ACL layers instead of forcing a user-space namespace re-map.
+      - ./data:/data
+      - ./output:/output
+    environment:
+      # Swapped --medvram-sdxl for the system-wide --medvram wrapper
+      # Added --no-half-vae to process the final image decoding pass in half-precision
+      # Added --opt-split-attention to optimize the VRAM cross-attention math layer
+      - CLI_ARGS=--xformers --api --listen --medvram --no-half-vae --opt-split-attention
+      # Added PyTorch flag to resolve internal memory fragmentation
+      - PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+      # To know which UI should be used. E.g., AUTOMATIC1111 or vladmandic
+      - SD_WEBUI_VARIANT=automatic1111 
+    devices:
+        # Podman CDI GPU configuration mapping
+      - nvidia.com/gpu=0
+    security_opt:
+      - label=disable
+    restart: unless-stopped
+
