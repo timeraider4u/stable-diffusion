@@ -3,21 +3,9 @@
 ## Download .safetensors files
 ```bash
 # [Anime / Illustration] Download Animagine XL V3.1 (approx. 6.6 GB)
-podman run -it --rm -v .:/models:Z python:3.11-slim bash -c "
-  pip install --no-cache-dir huggingface_hub tqdm && \
-  python -c '
-from huggingface_hub import hf_hub_download
-from huggingface_hub.utils import enable_progress_bars
-
-enable_progress_bars()
-
-hf_hub_download(
-    repo_id=\"cagliostrolab/animagine-xl-3.1\",
-    filename=\"animagine-xl-3.1.safetensors\",
-    local_dir=\"/models\"
-)
-'
-"
+./download-safetensors.sh \
+  'cagliostrolab/animagine-xl-3.1' \
+  'animagine-xl-3.1.safetensors'
 ```
 
 ```bash
@@ -25,22 +13,9 @@ hf_hub_download(
 # which is one of the most popular, high-quality,
 # and lightweight Anime models based on Stable Diffusion 1.5
 # (via Docker container)
-podman run -it --rm -v .:/models:U python:3.11-slim bash -c "
-  pip install --no-cache-dir huggingface_hub tqdm && \
-  python -c '
-from huggingface_hub import hf_hub_download
-from huggingface_hub.utils import enable_progress_bars
-
-enable_progress_bars()
-
-hf_hub_download(
-    repo_id=\"gsdf/Counterfeit-V3.0\",
-    filename=\"Counterfeit-V3.0_fix_fp16.safetensors\",
-    local_dir=\"/models\",
-    local_dir_use_symlinks=False
-)
-'
-"
+./download-safetensors.sh \
+  'gsdf/Counterfeit-V3.0' \
+  'Counterfeit-V3.0_fix_fp16.safetensors'
 ```
 
 ## Prompts for cute anime girls

@@ -5,40 +5,16 @@
 
 ```bash
 # Download waiNSFWIllustrious_v120 for NSFW / hentai stuff
-podman run -it --rm -v .:/models:Z python:3.11-slim bash -c "
-  pip install --no-cache-dir huggingface_hub tqdm && \
-  python -c '
-from huggingface_hub import hf_hub_download
-from huggingface_hub.utils import enable_progress_bars
-
-enable_progress_bars()
-
-hf_hub_download(
-    repo_id=\"Bryan32/IllustriousPonyXL\",
-    filename=\"waiNSFWIllustrious_v120.safetensors\",
-    local_dir=\"/models\"
-)
-'
-"
+./download-safetensors.sh \
+  'Bryan32/IllustriousPonyXL' \
+  'waiNSFWIllustrious_v120.safetensors'
 ```
 
 ```bash
 # Download DarkSushiMix for NSFW / hentai stuff
-podman run -it --rm -v .:/models:Z python:3.11-slim bash -c "
-  pip install --no-cache-dir huggingface_hub tqdm && \
-  python -c '
-from huggingface_hub import hf_hub_download
-from huggingface_hub.utils import enable_progress_bars
-
-enable_progress_bars()
-
-hf_hub_download(
-    repo_id=\"nergaldarski/Dark-Sushi-mix-2.25D\",
-    filename=\"darkSushiMixMix_225D.safetensors\",
-    local_dir=\"/models\"
-)
-'
-"
+./download-safetensors.sh \
+  'nergaldarski/Dark-Sushi-mix-2.25D' \
+  'darkSushiMixMix_225D.safetensors'
 ```
 
 ## Nude girl
@@ -51,6 +27,25 @@ masterpiece, best quality, newest, absurdres, highres, 1girl, beautiful body, nu
 **Negative prompt:**
 ```
 (low quality, worst quality:1.5), (bad anatomy), lowres, bad composition, fewer digits, text, username, logo, inaccurate eyes, extra digits, fewer digits, extra arms, disfigured, missing arms, too many fingers, fused fingers, missing fingers,
+```
+
+### The Traditional Hot Spring (Onsen Relaxing)
+```
+Steps: 28
+Sampler: Euler a
+Schedule type: Normal
+CFG scale: 5
+Width: 896
+Height: 1152
+Model: waiNSFWIllustrious_v120
+```
+**Prompt:**
+```
+1girl, solo, cute anime girl, ecchi aesthetic, soaking in an outdoor hot spring, smooth skin, hair tied up in a messy bun with loose strands, relaxed but slightly embarrassed smile, rosy cheeks, steam rising from water, natural rock formation background, bamboo fence, cherry blossom petals floating on water, soft morning light, gorgeous digital painting, pixiv trend, sitting, nude, naked, small tits, small breasts, pussy or ass
+```
+**Negative prompt:**
+```
+photo, 3d, realistic, fully dressed, clothing, calm expression, dark, low resolution, bad anatomy, text, clothing, towel
 ```
 
 ### Sex in office
@@ -102,7 +97,7 @@ Steps: 25, Sampler: DPM++ 2M Karras, CFG scale: 7, Seed: 338664335, Size: 512x76
 ### 2 Girls - schoolgirl lesbians
 **Prompt:**
 ```
-masterpiece, best quality, beautiful lighting, newest, 2girls, classroom, school uniforms, sitting on desk, girls masturbating, lesbian, kissing, breasts out, touching nipples, pussy shown 
+masterpiece, best quality, beautiful lighting, newest, 2girls, classroom, school uniforms, sitting on desk, girls masturbating, lesbian, kissing, breasts out, touching nipples, pussy shown, small tits, small breasts
 ```
 **Negative prompt:**
 ```
@@ -110,8 +105,8 @@ masterpiece, best quality, beautiful lighting, newest, 2girls, classroom, school
 ```
 **Settings:**
 ```
-Model: darkSushiMixMix_225D.safetensors [cca17b08da]
-Model (alternative): waiNSFWIllustrious_v120.safetensors [89cb4ec0a9]
+Model: waiNSFWIllustrious_v120
+Model (alternative): darkSushiMixMix_225D
 Sampling method: Euler a
 Sampling steps: 28
 Width: 896

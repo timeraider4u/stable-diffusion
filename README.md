@@ -230,59 +230,23 @@ exists a dedicated Python-CLI.
 
 ```bash
 # Download Juggernaut XL (via Docker container)
-podman run -it --rm -v .:/models:Z python:3.11-slim bash -c "
-  pip install --no-cache-dir huggingface_hub tqdm && \
-  python -c '
-from huggingface_hub import hf_hub_download
-from huggingface_hub.utils import enable_progress_bars
-
-enable_progress_bars()
-
-hf_hub_download(
-    repo_id=\"RunDiffusion/Juggernaut-XL-v9\",
-    filename=\"Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors\",
-    local_dir=\"/models\"
-)
-'
-"
+./download-safetensors.sh \
+  'RunDiffusion/Juggernaut-XL-v9' \
+  'Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors'
 ```
 
 ```bash
 # Download the official CyberRealistic V4.0 (FP16) base checkpoint
-podman run -it --rm -v .:/models:Z python:3.11-slim bash -c "
-  pip install --no-cache-dir huggingface_hub tqdm && \
-  python -c '
-from huggingface_hub import hf_hub_download
-from huggingface_hub.utils import enable_progress_bars
-
-enable_progress_bars()
-
-hf_hub_download(
-    repo_id=\"cyberdelia/CyberRealistic\",
-    filename=\"CyberRealistic_V4.0_FP16.safetensors\",
-    local_dir=\"/models\"
-)
-'
-"
+./download-safetensors.sh \
+  'cyberdelia/CyberRealistic' \
+  'CyberRealistic_V4.0_FP16.safetensors'
 ```
 
 ```bash
 # [Hyper-Realism] Download Juggernaut XL (approx. 6.6 GB)
-podman run -it --rm -v .:/models:Z python:3.11-slim bash -c "
-  pip install --no-cache-dir huggingface_hub tqdm && \
-  python -c '
-from huggingface_hub import hf_hub_download
-from huggingface_hub.utils import enable_progress_bars
-
-enable_progress_bars()
-
-hf_hub_download(
-    repo_id=\"RunDiffusion/Juggernaut-X-Hyper\",
-    filename=\"JuggernautXRundiffusion_Hyper.safetensors\",
-    local_dir=\"/models\"
-)
-'
-"
+./download-safetensors.sh \
+  'RunDiffusion/Juggernaut-X-Hyper' \
+  'juggernautXRundiffusion_Hyper.safetensors'
 ```
 
 ## Run stable-diffusion
