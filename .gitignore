@@ -11,6 +11,9 @@
 *~
 *.bak
 
+# Ignore input file
+/input
+
 # Ignore output files
 /output
 !/output/.keep
