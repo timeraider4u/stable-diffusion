@@ -25,9 +25,9 @@ services:
       - nvidia.com/gpu=0
     security_opt:
       - label=disable
-    # FIX: Maps container UIDs/GIDs directly to your active host session,
-    # allowing Podman to respect the 'shared' group ACLs.
-    userns: keep-id:uid=0,gid=0
+    # FIX: Tells Podman to run the container using the active host user's identity
+    # and map group permissions natively, resolving the User A vs User B file lock.
+    userns: keep-id
     # FIX: Instructs Podman to leak host supplemental groups (like 'shared')
     # into the container
     group_add:
