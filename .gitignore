@@ -5,7 +5,10 @@
 .cache
 
 # Ignore any local configurations
-/data/config
+/data/
+!/data/.keep
+!/data/Lora/.keep
+!/data/StableDiffusion/.keep
 
 # Ignore backup files
 *~
