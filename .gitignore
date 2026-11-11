@@ -11,3 +11,7 @@
 *~
 *.bak
 
+# Ignore output files
+/output
+!/output/.keep
+
