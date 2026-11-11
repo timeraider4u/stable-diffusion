@@ -1,0 +1,2 @@
+# Stable-Diffusion models (SafeTensor files) can be huge (multiple GiB) and should not be committed
+*.safetensors
