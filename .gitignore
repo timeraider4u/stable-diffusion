@@ -4,3 +4,10 @@
 # Ignore any local caches used by StableDiffusion
 .cache
 
+# Ignore any local configurations
+/data/config
+
+# Ignore backup files
+*~
+*.bak
+
