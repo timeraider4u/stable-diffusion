@@ -312,6 +312,18 @@ Your generated images and configuration assets are automatically mirrored on you
 * **Custom VAEs (Fine-tuning filters):** `~/sdata/VAE/`
 * **Custom Models Folder:** `~/data/StableDiffusion/`
 
+## Using StableDiffusion
+- [Anime cute girls](./Anime-cute-girls.md)
+- [Anime Ecchi](./Anime-Ecchi.md)
+- [Anime NSFW Hentai stuff](./Anime-NSFW-hentai.md)
+- [SciFi](./SciFi.md)
+
+## Troubleshooting
+```bash
+# (in case docker-compose YAML file was changed)
+podman-compose down && podman-compose up -d
+```
+
 ## References:
 - https://share.google/aimode/a0fsdYDtYZNWlnP8K
 - https://oneuptime.com/blog/post/2026-03-18-run-nvidia-gpu-containers-podman/view
