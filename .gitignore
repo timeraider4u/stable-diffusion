@@ -21,5 +21,5 @@
 /output
 !/output/.keep
 
-# Ignore out-of-memory directory
+# Ignore out-of-memory directory / files
 /oom

@@ -1,5 +1,8 @@
 # Image 2 image
 
+## Download .safetensors files
+Same models as in  [Anime cute girls](./Anime-cute-girls.md)
+
 ## Converting 20250127_173136.jpg to anime-style image
 ```
 1boy, solo, selfie, portrait, close-up, looking at viewer, smile, sunglasses, green baseball cap, blonde hair, short hair, beach, ocean, sunset, golden hour, orange sky, warm lighting, lens flare, masterpiece, best quality, very aesthetic, absurdres, newest
