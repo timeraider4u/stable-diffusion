@@ -17,6 +17,23 @@
   'darkSushiMixMix_225D.safetensors'
 ```
 
+```bash
+# Download WAI-illustrious-SDXL for NSFW / hentai stuff
+./download-safetensors.sh \
+  'LyliaEngine/waiIllustriousSDXL_v170' \
+  'waiIllustriousSDXL_v170.safetensors'
+```
+
+## Download LoRA .safetensors files
+*(Note: Checkpoint files are large, these downloads will take some time depending on your network speed. Ensure you have at least 15GB of free space before proceeding)*
+```bash
+# pussy-sandwich
+./download-safetensors.sh \
+  --lora \
+  'Muapi/pussy-sandwich' \
+  'pussy-sandwich.safetensors'
+```
+
 ## Nude girl
 Steps: 28, Sampler: Euler a, Schedule type: Normal, CFG scale: 5, Seed: 322058873, Size: 832x1216, Model hash: b9044b28d6, Model: waiNSFWIllustrious_v120, Version: f2.0.1v1.10.1-previous-603-ge5b34baa, Module 1: sdxl_vae
 
@@ -95,23 +112,10 @@ Steps: 25, Sampler: DPM++ 2M Karras, CFG scale: 7, Seed: 338664335, Size: 512x76
 ```
 
 ### 2 Girls - schoolgirl lesbians
-**Prompt:**
 ```
 masterpiece, best quality, beautiful lighting, newest, 2girls, classroom, school uniforms, sitting on desk, girls masturbating, lesbian, kissing, breasts out, touching nipples, pussy shown, small tits, small breasts
-```
-**Negative prompt:**
-```
-(worst quality, low quality:1.4)
-```
-**Settings:**
-```
-Model: waiNSFWIllustrious_v120
-Model (alternative): darkSushiMixMix_225D
-Sampling method: Euler a
-Sampling steps: 28
-Width: 896
-Height: 1152
-CFG scale: 5
+Negative prompt: (worst quality, low quality:1.4)
+Steps: 28, Sampler: Euler a, Schedule type: Automatic, CFG scale: 5, Seed: 1936535523, Size: 896x1152, Model hash: 89cb4ec0a9, Model: waiNSFWIllustrious_v120, Version: v1.10.1
 ```
 
 ### 2 Girls - lesbians in space

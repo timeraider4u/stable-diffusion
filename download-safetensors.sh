@@ -5,9 +5,10 @@ BASE_DIR="$HOME/shared/stable-diffusion/data"
 TARGET_DIR="${BASE_DIR}/StableDiffusion"
 
 usage() {
-  echo "Usage: $(basename "$0") [--lora] <repo_id> <filename>"
+  echo "Usage: $(basename "$0") [--lora] <repo_id> <filename> [output_filename]"
   echo "Examples:"
   echo "  Checkpoint: $(basename "$0") RunDiffusion/Juggernaut-XL-v9 Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
+  echo "  Renamed:    $(basename "$0") RunDiffusion/Juggernaut-XL-v9 Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors juggernaut_v9.safetensors"
   echo "  LoRA:       $(basename "$0") --lora Kanbara/doll-likeness-series koreanDollLikeness_v20.safetensors"
   exit 1
 }
@@ -17,13 +18,14 @@ if [[ "${1:-}" == "--lora" ]]; then
   shift
 fi
 
-if [[ $# -ne 2 ]]; then
+if [[ $# -lt 2 || $# -gt 3 ]]; then
   usage
 fi
 
 REPO_ID="$1"
 FILENAME="$2"
-DEST_FILE="${TARGET_DIR}/${FILENAME}"
+OUTPUT_FILENAME="${3:-$FILENAME}"
+DEST_FILE="${TARGET_DIR}/${OUTPUT_FILENAME}"
 
 if [[ -f "$DEST_FILE" ]]; then
   echo "File already exists at '${DEST_FILE}'. Skipping download."
@@ -54,6 +56,10 @@ hf_hub_download(
 )
 "
   '
+
+if [[ "$FILENAME" != "$OUTPUT_FILENAME" ]]; then
+  mv "${TARGET_DIR}/${FILENAME}" "$DEST_FILE"
+fi
 
 rm -rf "${TARGET_DIR}/.cache"
 
