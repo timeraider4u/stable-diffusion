@@ -137,6 +137,21 @@ Height: 1152
 CFG scale: 5
 ```
 
+## oniix / WAI-illustrious-SDXL v17.0 prompts
+Taken from [https://betterwaifu.com/post/f66lj3c](https://betterwaifu.com/post/f66lj3c).
+```
+fully nude, yuri, pubic hair, orgasm, vaginal penetration, vaginal fluids, leaning back, full body, cunnilingus, sitting on bed, pussy ejaculation, Shibuya Rin, Shimamura Uzuki, masterpiece,best quality,newest,absurdres,highres,
+Negative prompt: (low quality:1.5),(worst quality:1.5),(bad anatomy),lowres,bad composition,fewer digits,text,username,logo,inaccurate eyes,extra digits,fewer digits,extra arms,disfigured,missing arms,too many fingers,fused fingers,missing fingers,
+Steps: 28, Sampler: Euler a, Schedule type: Automatic, CFG scale: 5, Seed: 243246466, Size: 832x1216, Model hash: f116b0c78f, Model: waiIllustriousSDXL_v170, Version: v1.10.1
+```
+
+Taken from [https://betterwaifu.com/post/34ua6br](https://betterwaifu.com/post/34ua6br)
+```
+fully nude, yuri, pubic hair, orgasm, vaginal penetration, vaginal fluids, full body, double dildo, tribadism, holding each other, leg over shoulder, Takarada Rikka, Shinjou Akane,
+Negative prompt: (low quality:1.5),(worst quality:1.5),(bad anatomy),lowres,bad composition,fewer digits,text,username,logo,inaccurate eyes,extra digits,fewer digits,extra arms,disfigured,missing arms,too many fingers,fused fingers,missing fingers,
+Steps: 28, Sampler: Euler a, Schedule type: Automatic, CFG scale: 5, Seed: 754383409, Size: 832x1216, Model hash: f116b0c78f, Model: waiIllustriousSDXL_v170, Version: v1.10.1
+```
+
 ## References
 - https://betterwaifu.com/blog/illustrious-guide
 - https://betterwaifu.com/blog/ai-pose-prompts
